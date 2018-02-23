@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSIT 337 Lab 5 by Monti Lameg</title>
+		<style type="text/css">
+
+			#ques {
+				float: left;
+				margin-left: 100px;
+			}
+			
+			table {
+				text-align: center;
+			}
+			
+			th {
+				width: 200px;
+			}
+
+			
+			footer {
+				text-align: right;
+				overflow: hidden;
+				width: 100%;
+				margin-top:30px;
+			}
+			
+
+		</style>
+	</head>
+	
+	<body>
+	<div id="heading">	
+		<p>Monti Lameg</p>
+		<p>CSIT 337</p>
+		<p>Lab 5</p>
+		<p>March 24, 2016</p>
+	</div>
+	<div id="ques">
+		<h2>Exercise: 5.1</h2>
+		<p id="text" onclick="RanColor()">Welcome to CSIT: Click me to change color.</p>
+		<p id="label" style = "display: inline">Text Color = </p>
+		<p id="tc" onclick="RanColor()" style = "display: inline"></p>
+	</div>	
+	
+		<script type="text/javascript">
+			var color = ["Red","Cyan","Blue","DarkBlue","LightBlue","Purple","Yellow","Lime","Magenta","White","Silver","Gray","Black","Orange","Brown","Maroon","Green","Olive",];
+			function RanColor() {
+				var randomcolor = color[Math.floor(Math.random()*color.length)];
+				document.getElementById("text").style.color = randomcolor;
+				document.getElementById("tc").innerHTML = randomcolor.toString();
+			
+			}
+		</script>
+	<div id="ques">
+		<h2>Exercise: 5.2</h2>
+		<form>
+			<table border="1">
+				<tr>
+					<th>First Number</th>
+					<td><input id="value1" type="number"></td>
+				</tr>
+				
+				<tr>
+					<th>Second Number</th>
+					<td><input id="value2" type="number"></td>
+				</tr>
+				
+				<tr>
+					<th>Third Number</th>
+					<td><input id="value3" type="number"></td>
+				</tr>
+
+				<tr>
+					<th><input type="button" value="Total" onclick="Add()" style=" width: 100%"></th>
+					<td><input id="output" type="text"></td>
+				</tr>					
+			</table>
+			
+
+		</form>
+	</div>
+		<script type="text/javascript">
+			
+			function Add() {
+				var a = document.getElementById("value1").value;
+				var b = document.getElementById("value2").value;
+				var c = document.getElementById("value3").value;
+				var total = +a + +b + +c;
+				document.getElementById("output").value= total;
+			
+			}
+		</script>
+	
+	</body>
+</html>
